@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Main {
@@ -8,15 +9,20 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm:ss a");
+		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
+		DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		
 		
 		
 		LocalDate data = LocalDate.parse("10/10/1990", dateFormat);
-		LocalDateTime hora = LocalDateTime.parse("10:00:00", timeFormat);
+		LocalTime hora = LocalTime.parse("08:10:10", timeFormat);
+		LocalDateTime dataHora = LocalDateTime.parse("10/10/1990 10:00:00", dateTimeFormat);
+		
 		
 		
 		System.out.println(data);
-		System.out.println(hora.getHour());
+		System.out.println(hora);
+		System.out.println(dataHora);
 		
 
 	}
